@@ -12,7 +12,7 @@ public class Repository {
         List<Student> listStudent = new ArrayList<>();
         String sql = "Select * from tbl_hssinhvien";
         try {
-            Connection con = ConnectionDB.getConnection();
+            Connection con = DBConnection.getConnection();
             Statement statement = con.createStatement();
             rs = statement.executeQuery(sql);
             while (rs.next()){
@@ -31,7 +31,7 @@ public class Repository {
         sqlBuilder.append("'" + student.getSex() + "', '" + student.getAddress() + "' ,'" + student.getPhone() + "')");
         System.out.println(sqlBuilder.toString());
         try {
-            Connection con = ConnectionDB.getConnection();
+            Connection con = DBConnection.getConnection();
             Statement statement = con.createStatement();
 
             statement.execute(sqlBuilder.toString());
@@ -46,7 +46,7 @@ public class Repository {
         String sql = "select * from tbl_hssinhvien where id = " + id;
         ResultSet rs;
         try {
-            Connection con = ConnectionDB.getConnection();
+            Connection con = DBConnection.getConnection();
             Statement statement = con.createStatement();
             rs = statement.executeQuery(sql);
             if(rs.next()){

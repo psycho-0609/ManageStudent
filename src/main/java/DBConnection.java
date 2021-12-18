@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionDB {
+public class DBConnection {
 
     private static final String jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static Connection con;
